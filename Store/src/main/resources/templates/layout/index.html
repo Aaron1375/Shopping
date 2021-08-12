@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Front awsome -->
+    <link rel="stylesheet" href="/fontawesome-free-5.15.2-web/css/all.min.css">
+    <script src="/fontawesome-free-5.15.2-web/js/all.min.js"></script>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Java6 project</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ <!-- shopping cart css -->
+ <!-- <link rel="stylesheet" href="/static/assets/css/shopping-cart-app.css"> -->
+</head>
+<body class="container" ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+    <header class="row"></header>
+    <nav class="">
+        <div th:replace="/layout/_menu.html"></div>
+    </nav>
+    
+    <div class="row">
+        <article class="col-sm-9">
+            <div th:replace="${main}"></div>
+        </article>
+        <aside class="col-sm-3">
+            <div th:replace="/layout/_cart-info.html"></div>
+            <div th:replace="/layout/_category.html"> </div>
+        </aside>
+    </div>
+    <footer class="row">
+        <div class="col">
+            <div class="card bg-dark text-white">
+                <div class="card-body text-center">
+                    <h4>&copy; 2021. All rights reserved.</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>
